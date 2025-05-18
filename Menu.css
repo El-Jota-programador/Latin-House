@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Meow+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Meow+Script&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 .Lobster {
   font-family: 'Lobster', cursive;
@@ -39,14 +39,6 @@
   font-style: normal;
 }
 
-
-.montserrat-light {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
 .button {
   margin: 0 15px;
   filter: brightness(0.8);
@@ -80,7 +72,7 @@ body {
     align-items: center;
     height: 130px; /* Default size */
     transition: height 0.3s ease; /* Smooth transition */
-    background-color: #8b98c4;
+    background-color: #aeccd3;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -98,12 +90,6 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0 200px 0 0;
-}
-
-
-
-#food-images-container {
-  flex-flow: column wrap;
 }
 
 .food-image {
@@ -162,7 +148,6 @@ body {
 
 .sec-div {
     align-items: center;
-    font-size: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -171,35 +156,186 @@ body {
 }
 
 .sec-text {
-    font-family: "Kanchenjunga", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
     font-style: normal;
     margin: 10px 0 20px;
+    font-size: 25px;
 }
 
 .sec-title {
     font-size: 50px;
-    color: #000000;
     font-family: "Meow Script", cursive;
     margin: 0;
+    font-weight: 300;
 }
 
 #food-images-container {
-    justify-content: center;
     align-items: center;
+    flex-flow: column wrap;
 }
 
 .food-image {
-    width: 300px;
-    height: 219.59px;
-    margin: 0;
+    width: 322px;
+    height: 235.7px;
+    margin: -3px -2px;
 }
 
-#menu-image img {
+/* reviews section */
+
+#reviews-container {
+    display: flex;
+    align-items: center;
+    padding: 27px 0;
+    margin: 0 200px;
+    box-sizing: border-box;
+}
+
+.review {
+    align-items: center;  
+    margin: 20px; 
+}
+
+.stars {
+    width: 200px;
+    height: auto;
+}
+
+.little-stars {
+    width: 153px;
+    height: auto;
+    margin-right: 47px;
+}
+
+.review-title {
+    font-size: 30px;
+    padding-bottom: 20px;
+    color: black;
+}
+
+.review-text {
+    padding-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #5f5f5f;
+}
+
+.review-author {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+/* schedule section */
+
+#div-schedule {
+    background-color: #363636;
+    width: 800px;
+    height: 350px;
+    margin: 0 200px 100px 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec-white-title {
+    font-size: 50px;
+    font-weight: 300;
+    color: white;
+    font-family: "Meow Script", cursive;
+    margin: 50px 0 30px 0;
+    text-align: center;
+}
+
+.sec-white-text {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin: 5px 0 20px;
+    font-size: 25px;
+    color: white
+}
+
+#book-button {
+    background-color: #aeccd3;
+    color: #4c3c2a;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Kanchenjunga, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* footer */
+
+#footer {
+    background-color: #aeccd3;
+    color: white;
+    padding: 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-title {
+    font-family: "Lobster";
+    font-size: 50px;
+    margin: 0 0 14px;
+    color: #4c3c2a;
+}
+
+.footer-subtitle {
+    font-family: "Meow Script", cursive;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0 0 14px;
+    color: #4c3c2a;
+}
+
+#footer-row1 {
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: #4c3c2a solid 1px;
+}
+
+.footer-text {
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.arial {
+    font-family: "Arial", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+#footer-webs-things {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-column {
+    padding: 15px 0 0 50px;
+}
+
+.webs-things {
+    cursor: pointer
+}
+
+/* menu-section */
+
+#div-menu-image img {
     width: 100%;
     height: auto;
     display: block;
+    margin-top: 1px;
+    margin-bottom: -26px;
 }
 
 #menu-description {
