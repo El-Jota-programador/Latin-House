@@ -1,562 +1,389 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset = "UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Taste food of all South and Center America">
-        <title>Latin House - Latin food</title>
-        <link rel="stylesheet" href="./Menu.css">
-    </head>
-    <body>
-        <div id="upper-bar">
-            <h1 id="title">Latin House</h1>
+buttonFunctions();
+toggleBar();
+toggleDishMenu();
 
-            <div id="buttons">
-                <div class="button" id="home-button-container">
-                    <button id="home-button" style="border-bottom: 2px solid #4c3c2a;">Home</button>
-                </div>
-                <div class="button" id="menu-button-container">
-                    <button id="menu-button">Menu</button>
-                </div>
-                <div class="button" id="order-button-container">
-                    <button id="order-button">Your order</button>
-                </div>
-                <div class="button" id="info-button-container">
-                    <button id="contact-button">Contact us</button>
-                </div>
-            </div>
-        </div>
+function buttonFunctions() {
 
-        <section class="section" id="sec-home">
-            <div class="image-container">
-                <h1 class="image-text">Latin House</h1>
-                <h3 class="image-text">Taste food of all South and Center America</h3>
-                <img src="./Assets/Latin house recortado.jpg" alt="local" class="heading-image"/>
-            </div>
-            <div id="div-our-food" class="sec-div">
-                <h2 class="sec-title"><strong>Our food</strong></h2>
-                <p class="sec-text">Taste food of all South and Center America. <br> We have a variety of food from all Latin America, from tacos to pupusas, you can find it all here.</p>
-                <div id="food-images-container">
-                    <img src="./Assets/tacos.png" alt="food" class="food-image"/>
-                    <img src="./Assets/grande-pupusas-salvadorenas .jpg" alt="food" class="food-image" id="pupusas-img"/>
-                    <img src="./Assets/causa-limeña.png" alt="food" class="food-image"/>
-                    <img src="./Assets/arepas-venezolanas.png" alt="food" class="food-image"/>
-                    <img src="./Assets/empanadas-argentinas.png" alt="food" class="food-image"/>
-                    <img src="./Assets/rondon-panameño.png" alt="food" class="food-image"/>
-                    <img src="./Assets/reviro.png" alt="food" class="food-image"/>
-                    <img src="./Assets/enchiladas-salvadorenas.png" alt="food" class="food-image"/>
-                    <img src="./Assets/mole.png" alt="food" class="food-image"/>
-                </div>
-            </div>
-            <div id="div-reviews" class="sec-div">
-                <h2 class="sec-title"><strong>What do our customers think?</strong></h2>
-                <div id="reviews-container">
-                    <div class="review">
-                        <img src="./Assets/5stars.png" alt="5 stars" class="stars"/>
-                        <p class="review-title">"Authentic flavor!"</p>
-                        <p class="review-text">«Everything was really delicious — I felt at home from the first bite.»</p>
-                        <p class="review-author">- Carlos</p>
-                    </div>
-                    <div class="review">
-                        <img src="./Assets/5stars.png" alt="5 stars" class="stars"/>
-                        <p class="review-title">"Amazing atmosphere"</p>
-                        <p class="review-text">«The music, the decor, and the food create the perfect Latin experience.»</p>
-                        <p class="review-author">- Estefani</p>
-                    </div>
-                    <div class="review">
-                        <img src="./Assets/5stars.png" alt="5 stars" class="stars"/>
-                        <p class="review-title">"Best I've ever had"</p>
-                        <p class="review-text">«The tacos and arepas were next level—definitely coming back!»</p>
-                        <p class="review-author">- Paul</p>
-                    </div>
-                    <div class="review">
-                        <img src="./Assets/4stars.png" alt="4 stars" class="little-stars"/>
-                        <p class="review-title">"Really good, just a bit slow"</p>
-                        <p class="review-text">«The food was excellent, but the service took a little while, not much.»</p>
-                        <p class="review-author">- Monica</p>
-                    </div>
-                </div>
-            </div>
-            <div id="div-schedule" class="sec-div">
-                <h2 class="sec-white-title"><strong>Schedule</strong></h2>
-                <p class="sec-white-text">From <strong>Monday to Friday</strong> <br>  
-                11:00 a. m. to 5:00 p. m.</p>
-                <p class="sec-white-text"><strong>Saturday and Sunday</strong> <br>
-                10:00 a.m. to 7:00 p.m.</p>
-                <button id="book-button">Book a table</button>
-            </div>
-        </section>
+    const home = document.getElementById("home-button");
+    const secHome = document.getElementById("sec-home");
 
-        <section class="section" id="sec-menu" style="display: none;">
-            <div id="div-menu-image" class="image-container">
-                <h1 class="image-text">Latin flavour</h1>
-                <h3 class="image-text">Taste food of all South and Center America</h3>
-                <img src="./Assets/pupusas-salvadorenas.jpg" alt="food" class="heading-image"/>
-            </div>
-            <div id="countries">
-                <div id="mexico">
-                    <div class="subtitle-container">
-                        <h2 class="subtitle">Mexico</h2>
-                        <img src="./Assets/Mx_flag.jpg" alt="Mx_flag" class="flag"/>
-                    </div>
+    const menu = document.getElementById("menu-button");
+    const secMenu = document.getElementById("sec-menu");
 
-                    <div class="section-menu">
-                        <div class="first-dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">1. Tacos</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Tacos</p>
-                            </div>
-                        </div>
+    const order = document.getElementById("order-button");
+    const secOrder = document.getElementById("sec-order");
 
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">2. Chiles en nogada</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Poblano chiles stuffed with <em>picadillo</em> (a mixture made of shredded meat, aromatics, fruits and spices) topped with a walnut-based cream sauce called nogada, pomegranate seeds and parsley</p>
-                            </div>
-                        </div>
+    const info = document.getElementById("contact-button");
+    const secInfo = document.getElementById("sec-info");
 
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">3. some mexican food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">A soup made from hominy (a type of corn) with meat (chicken or pork), and can be seasoned and garnished with shredded lettuce or cabbage, chili peppers, onion, garlic, radishes, avocado, salsa or limes.</p>
-                            </div>
-                        </div>
 
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">4. some mexican food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
+    let actualSection = secHome; // Variable to keep track of the current section
+    let actualButton = home; // Variable to keep track of the current button
 
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">5. some mexican food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    const buttons = [
+        home,
+        menu,
+        order,
+        info,
+    ];
 
-                <div id="el-salvador">
-                    <div class="subtitle-container">
-                        <h2 class="subtitle">El Salvador & Honduras</h2>
-                        <div class="flags">
-                            <img src="./Assets/Sv_flag.jpg" alt="Sv_flag" class="flag"/>
-                            <img src="./Assets/Hn_flag.jpg" alt="Hn_flag" class="flag"/>
-                        </div>
-                    </div>
+    const sections = [
+        secHome,
+        secMenu,
+        secOrder,
+        secInfo,
+    ];
 
-                    <div class="section-menu">
-                        <div class="first-dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">1. Pupusas</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Corn flour dought discs with filling to choose</p>
-                            </div>
-                        </div>
+    buttons.forEach((button, idx) => {
+        button.addEventListener('click', function () {
+            // Hide all sections
+            sections.forEach((section) => {
+                if (section) section.style.display = "none";
+            });
 
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">2. Tamales de elote</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Filling to choose inside corn dought</p>
-                            </div>
-                        </div>
+            // Reset styles of all buttons
+            buttons.forEach((btn) => {
+                btn.style.borderBottom = "transparent";
+                btn.style.filter = "brightness(0.8)";
+            });
 
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">3. Atol de elote</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Sweet milk and corn drink</p>
-                            </div>
-                        </div>
+            // Shows the correspondiente section and aplies styles to the active button
+            if (sections[idx]) sections[idx].style.display = "block";
+            button.style.borderBottom = "2px solid #4c3c2a";
+            button.style.filter = "brightness(1.2)";
 
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">4. Mondongo/tripa soup</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Cow stomach, potatos, carrots, yuca and corn soup</p>
-                            </div>
-                        </div>
+            // Update the state variables
+            actualSection = sections[idx];
+            actualButton = button;
 
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">5. Fried/boiled cassava</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Fried cassava with tomato sauce, cucumber and radish</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            window.scrollTo(0, 0);
+        });
+    });
+}
 
-                <div id="panama">
-                    <div class="subtitle-container">
-                        <h2 class="subtitle">Panama</h2>
-                        <img src="./Assets/Pm_flag.jpeg" alt="Pm_flag" class="flag"/>
-                    </div>
+// Function to toggle the upper bar size based on scroll position
 
-                    <div class="section-menu">
-                        <div class="first-dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">1. some panamanian food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">2. some panamanian food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">3. some panama food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">4. some panama food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">5. some panama food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+function toggleBar() {
+    document.addEventListener("scroll", function () {
+        const upperBar = document.getElementById("upper-bar");
+        if (window.scrollY === 0) {
+            upperBar.style.height = "130px"; // Larger size when at the top
+        } else {
+            upperBar.style.height = "70px"; // Smaller size when scrolling
+        }
+    });
+}
 
-                <div id="colombia">
-                    <div class="subtitle-container">
-                        <h2 class="subtitle">Colombia</h2>
-                        <img src="./Assets/Co_flag.jpg" alt="Co_flag" class="flag"/>
-                    </div>
+function toggleDishMenu () {
+    const dishButtons = Array.from(document.getElementsByClassName('dish'));
 
-                    <div class="section-menu">
-                        <div class="first-dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold" >1 bandeja paisa </p>
-                                <p class="kanchenjunga-bold">8,50€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">rice,beans,meat,sausage,egg,arepa,cut and avocado</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">2. empanadas</p>
-                                <p class="kanchenjunga-bold">3,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">chopped meat, ground beef and potato wrapped in half-moon dough</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">3.arepa con todo</p>
-                                <p class="kanchenjunga-bold">2,50€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular>arepa with picadillo and meat </p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">4. sancocho</p>
-                                <p class="kanchenjunga-bold">5,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">soup with bananas, potatoes, yucca, chopped cilantro,</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">5. sudado </p>
-                                <p class="kanchenjunga-bold">12,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Broth with rice, a piece of chicken and potato</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    const tacos = document.getElementById('Tacos');
+    const pozole = document.getElementById('Pozole');
+    const pupusas = document.getElementById('Pupusas');
+    const tamalesDeElote = document.getElementById('Tamales de elote');
+    const tostadasSalvadoreñas = document.getElementById('Tostadas salvadoreñas');
+    const carimañola = document.getElementById('Carimañola')
+    const alfajores = document.getElementById('Alfajores');
+    const crescent = document.getElementById('Crescent');
 
-                <div id="peru">
-                    <div class="subtitle-container">
-                        <h2 class="subtitle">Peru</h2>
-                        <img src="./Assets/Pe_flag.jpg" alt="Pe_flag" class="flag"/>
-                    </div>
+    dishButtons.forEach((dish) => {
+        dish.addEventListener('click', function () {
 
-                    <div class="section-menu">
-                        <div class="first-dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">1. ceviche </p>
-                                <p class="kanchenjunga-bold">5,50€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Minced meat and a sausage</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">2.causa</p>
-                                <p class="kanchenjunga-bold">1. 5'75€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">cake with stuffing and top chopped vegetables</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">3. chicken to olivo</p>
-                                <p class="kanchenjunga-bold">7,50€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">chicken with a little olive</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">4. Pancha manca </p>
-                                <p class="kanchenjunga-bold">12,95€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Different types of <strong>meat</strong>, corn and potato</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">5. Lomo Saltado</p>
-                                <p class="kanchenjunga-bold">12,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Stir-fried loin</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            // Elimina cualquier menú anterior
+            document.querySelectorAll('.dish-menu').forEach(menu => menu.remove());     
 
-                <div id="paraguay">
-                    <div class="subtitle-container">
-                        <h2 class="subtitle">Paraguay</h2>
-                        <img src="./Assets/Py_flag.jpeg" alt="Py_flag" class="flag"/>
-                    </div>
+            let dishMenu = document.createElement('div');
+            dishMenu.className = 'dish-menu';
 
-                    <div class="section-menu">
-                        <div class="first-dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">1. Reviro</p>
-                                <p class="kanchenjunga-bold">5,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Fried dought, destemmed and crispy, similar to chunkky breadcrumbs, elaborated mainly with <strong>wheat flour</strong>, water, salt and oil.</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">2. Mbeju</p>
-                                <p class="kanchenjunga-bold">2,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Starch cake made with <strong>flour</strong> and cheese inside</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">3. Vori-vori</p>
-                                <p class="kanchenjunga-bold">7,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Soup with chickpeas</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">4. Chipa </p>
-                                <p class="kanchenjunga-bold">3,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">A type of small, baked, <strong>cheese-flavored</strong> rolls</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">5. Asado </p>
-                                <p class="kanchenjunga-bold"> 12,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">Roasted <strong>meat</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            let dishName = document.createElement('p');
+            let xButtonDiv = document.createElement('div');
+            xButtonDiv.className = "x-button-div";
+            let xButton = document.createElement('button');
+            xButton.innerHTML = "x";
+            xButton.className = "x-button";
+            xButton.addEventListener('click', function () {
+                document.querySelectorAll('.dish-menu').forEach(menu => menu.remove());
+            });
 
-                <div id="argentina">
-                    <div class="subtitle-container">
-                        <h2 class="subtitle">Argentina</h2>
-                        <img src="./Assets/Ar_flag.jpeg" alt="Ar_flag" class="flag"/>
-                    </div>
+            let amountText = document.createElement('p');
+            amountText.className = 'input-text';
+            amountText.innerHTML = "¿How many do you want?";
+            let amount = document.createElement('input');
+            let addToCartButton = document.createElement('button');
+            addToCartButton.className = 'add-to-cart';
+            addToCartButton.innerHTML = "Add to cart";
 
-                    <div class="section-menu">
-                        <div class="first-dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">1. some argentinian food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">2. some argentinian food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">3. some argentinian food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">4. some argentinian food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                        <div class="dish">
-                            <div class="name-price">
-                                <p class="kanchenjunga-bold">5. some argentinian food</p>
-                                <p class="kanchenjunga-bold">10,00€</p>
-                            </div>
-                            <div class="item-description">
-                                <p class="kanchenjunga-regular">description</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            let selectText = document.createElement('p');
+            let selector = document.createElement('select');
+            let instructionsText = document.createElement('p');
+            instructionsText.className = "input-text";
+            instructionsText.innerHTML = "Are there any allergies or intolerances that we should know?";
+            let specialInstructions = document.createElement('input');
 
-                
-            </div>
-        </section>        
+            let clickedDish;
+            let itemPrice = "";
+            let selected;
+            let instructions = "";
+            let quantity;
 
-        <section class="section" id="sec-order" style="display: none;">
-            <div id="order">
-                <h1 class="kanchenjunga-bold">Your order</h1>
-                <p class="kanchenjunga-regular">You can choose up to 5 dishes from the menu</p>
-                <div id="order-container">
-                    <div class="order-item">
-                        <div class="order-name-price">
-                            <p class="kanchenjunga-bold">1. some food</p>
-                            <p class="kanchenjunga-bold">10,00€</p>
-                        </div>
-                        <div class="order-description">
-                            <p class="kanchenjunga-regular">description</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="order-total">
-                    <p class="kanchenjunga-bold">Total: 10,00€</p>
-                </div>
-                <div>
-                    <button>Order</button>
-                </div>
-                <div>
-                    <button>Cancel</button>
-                </div>
-            </div>
-        </section>
+            if (dish == tacos) {
+                selectText.innerHTML = "Choose the tacos' filling";
+                selectText.className = "input-text";
+                dishName.innerHTML = clickedDish;
 
-        <section class="section" id="sec-info" style="display: none;">
-            phone number: 53 582 679
-            email: latinhouse@gmail.com
-            instagram: @latinhouse_latamfood
-            We are located in the heart of the city, just a few steps from the main square. <br>
-            Our address is Calle de la comida 123, Madrid, Spain. <br>
-        </section>
+                // Options for the select
+                const options = ["Beef and onion", "Vegetables"];
+                options.forEach(opt => {
+                    let option = document.createElement('option');
+                    option.value = opt.toLowerCase();
+                    option.textContent = opt;
+                    selector.appendChild(option);
+                    selected = opt;
+                });
 
-        <div id="footer">
-            <div class="footer-row" id="footer-row1">
-                <div id="footer-logo-container">
-                    <h1 class="footer-title">Latin House</h1>
-                    <h3 class="footer-subtitle">The greatest variety of latin food in Canarias</h3>
-                </div>
-                <div class="footer-column">
-                    <p class="footer-text">Calle Méndez Núñez, 61, 39001 Santa Cruz de Tenerife, Spain</p>
-                    <p class="footer-text">Phone: 53 582 679</p>
-                    <p class="footer-text">Email: latinhouse@gmail.com</p>
-                </div>
-                <div class="footer-column">
-                    <p class="footer-text">Instagram: @latinhouse_latamfood</p>
-                    <p class="footer-text">Facebook: @latinhouse_latamfood</p>
-                    <p class="footer-text">Twitter: @latinhouse_latamfood</p>
-                </div>
-            </div>
-            
-            <div class="footer-row" id="footer-row2">
-                <p class="footer-text arial">© 2025 Latin House. All rights reserved.</p>
-                <div id="footer-webs-things">
-                    <p class="footer-text webs-things"><u>Terms and conditions</u></p>
-                    <p class="footer-text webs-things"><u>Privacy policy</u></p>
-                    <p class="footer-text webs-things"><u>Cookies policy</u></p>
-                </div>
-                <p class="footer-text"><em>Website by: El Jota</em></p>
-            </div>
-        </div>
-        <script src="./Menu.js"></script>
-    </body>
-</html>
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(selectText);
+                dishMenu.appendChild(selector);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+            } else if (dish == pozole) {
+                selectText.innerHTML = "Choose the type of meat";
+                selectText.className = "input-text";
+                dishName.innerHTML = clickedDish;
+
+                // Options for the select
+                const options = ["Pork, Chicken"];
+                options.forEach(opt => {
+                    let option = document.createElement('option');
+                    option.value = opt.toLowerCase();
+                    option.textContent = opt;
+                    selector.appendChild(option);
+                });
+
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(selectText);
+                dishMenu.appendChild(selector);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+
+            } else if (dish == pupusas) {
+                selectText.innerHTML = "Choose the pupusas' filling";
+                selectText.className = "input-text";
+                dishName.innerHTML = clickedDish;
+
+                // Options for the select
+                const options = ["Chicharron (pork)", "Beans", "Chicharron and beans", "'Locas' (chicharron, beans and cheese)", "Asaparagus"];
+                options.forEach(opt => {
+                    let option = document.createElement('option');
+                    option.value = opt.toLowerCase();
+                    option.textContent = opt;
+                    selector.appendChild(option);
+                });
+
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(selectText);
+                dishMenu.appendChild(selector);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+
+            } else if (dish == tamalesDeElote) {
+                selectText.innerHTML = "Choose the tamales' filling";
+                selectText.className = "input-text";
+                dishName.innerHTML = clickedDish;
+
+                // Options for the select
+                const options = ["Chicken and potato", "Beans"];
+                options.forEach(opt => {
+                    let option = document.createElement('option');
+                    option.value = opt.toLowerCase();
+                    option.textContent = opt;
+                    selector.appendChild(option);
+                });
+
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(selectText);
+                dishMenu.appendChild(selector);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+
+            } else if (dish == tostadasSalvadoreñas) {
+                selectText.innerHTML = "Choose the toasts' filling";
+                selectText.className = "input-text";
+                dishName.innerHTML = clickedDish;
+
+                // Options for the select
+                const options = ["Chicken and potato", "Beans"];
+                options.forEach(opt => {
+                    let option = document.createElement('option');
+                    option.value = opt.toLowerCase();
+                    option.textContent = opt;
+                    selector.appendChild(option);
+                });
+
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(selectText);
+                dishMenu.appendChild(selector);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+
+            } else if (dish == carimañola) {
+                selectText.innerHTML = "Choose the carimañolas' filling";
+                selectText.className = "input-text";
+                dishName.innerHTML = clickedDish;
+
+                // Options for the select
+                const options = ["Beef", "Cheese", "Chicken"];
+                options.forEach(opt => {
+                    let option = document.createElement('option');
+                    option.value = opt.toLowerCase();
+                    option.textContent = opt;
+                    selector.appendChild(option);
+                });
+
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(selectText);
+                dishMenu.appendChild(selector);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+
+            } else if (dish == alfajores) {
+                selectText.innerHTML = "Choose the alfajores' filling";
+                selectText.className = "input-text";
+                dishName.innerHTML = clickedDish;
+
+                // Options for the select
+                const options = ["Dulce de leche", "Chocolate", "Jam"];
+                options.forEach(opt => {
+                    let option = document.createElement('option');
+                    option.value = opt.toLowerCase();
+                    option.textContent = opt;
+                    selector.appendChild(option);
+                });
+
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(selectText);
+                dishMenu.appendChild(selector);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+
+            } else if (dish == crescent) {
+                selectText.innerHTML = "Choose the alfajores' filling";
+                selectText.className = "input-text";
+                dishName.innerHTML = clickedDish;
+
+                // Options for the select
+                const options = ["Dulce de leche", "Chocolate", "Jam"];
+                options.forEach(opt => {
+                    let option = document.createElement('option');
+                    option.value = opt.toLowerCase();
+                    option.textContent = opt;
+                    selector.appendChild(option);
+                });
+
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(selectText);
+                dishMenu.appendChild(selector);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+
+            } else {
+                dishName.innerHTML = clickedDish;
+
+                xButtonDiv.appendChild(xButton);
+                dishMenu.appendChild(xButtonDiv);
+                dishMenu.appendChild(amountText);
+                dishMenu.appendChild(amount);
+                dishMenu.appendChild(instructionsText);
+                dishMenu.appendChild(specialInstructions);
+                dishMenu.appendChild(addToCartButton);
+            };
+
+            // Posiciona el menú al lado del plato clickeado
+            document.body.appendChild(dishMenu);
+            const rect = dish.getBoundingClientRect();
+            dishMenu.style.position = 'absolute';
+            dishMenu.style.top = `${window.scrollY + rect.top}px`;
+            dishMenu.style.left = `${window.scrollX + rect.right - 488}px`;
+
+            addToCartButton.addEventListener('click', () => {
+                clickedDish = dish.id;
+                itemPrice = dish.querySelector('.price').textContent;
+                selected = selector.value;
+                quantity = parseInt(amount.value);
+                instructions = specialInstructions.value;
+
+                addToCart (clickedDish, itemPrice, selected, quantity, instructions, dishMenu);
+            });
+        });
+    });
+};
+
+function addToCart (clickedDish, itemPrice, selected, quantity, instructions, dishMenu) {
+    const divOrderContainer = document.getElementById('order-container');
+    let divOrderItem = document.createElement('div');
+    divOrderItem.className = 'order-item';
+    let orderNamePrice = document.createElement('div');
+    orderNamePrice.className = 'order-name-price';
+    let name = document.createElement('p');
+    name.className = 'kanchenjunga-bold';
+    name.innerHTML = clickedDish;
+    let price = document.createElement('p');
+    price.className = 'kanchenjunga-bold';
+    price.innerHTML = itemPrice;
+    let orderDescription = document.createElement('div');
+    orderDescription.className = 'order-description';
+    let description = document.createElement('p');
+
+    if (instructions) description.innerHTML = instructions;
+    else if (!instructions) {
+        let itemDescription = dish.querySelector('')
+        description = itemDescription;
+    }
+
+    orderNamePrice.appendChild(name);
+    orderNamePrice.appendChild(price);
+
+    divOrderItem.appendChild(orderNamePrice);
+    divOrderItem.appendChild(orderDescription);
+
+    divOrderContainer.appendChild(divOrderItem);
+
+    dishMenu.remove();
+
+};
+
+//una ventana para elegir si es a domicilio o reserva
+
+//después del nombre del plato en la comanda, si instrucciones: las instrucciones; si no instrucciones: descripción del plato.
