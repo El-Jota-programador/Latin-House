@@ -368,8 +368,8 @@ function addToCart (clickedDish, itemPrice, selected, quantity, instructions, di
 
     if (instructions) description.innerHTML = instructions;
     else if (!instructions) {
-        let itemDescription = dish.querySelector('')
-        description = itemDescription;
+        let itemDescription = dish.querySelector('item-description');
+        description.innerHTML = itemDescription;
     }
 
     orderNamePrice.appendChild(name);
