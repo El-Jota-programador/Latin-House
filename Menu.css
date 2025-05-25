@@ -21,6 +21,13 @@
   color: #5f5f5f;
 }
 
+.kanchenjunga-regular-brown {
+  font-family: "Kanchenjunga", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4c3c2a;
+}
+
 .kanchenjunga-medium {
   font-family: "Kanchenjunga", sans-serif;
   font-weight: 500;
@@ -39,12 +46,6 @@
   font-style: normal;
 }
 
-.button {
-  margin: 0 15px;
-  filter: brightness(0.8);
-  transition: filter 0.3s ease;
-}
-
 p {
   margin: 5px 0 5px 0;
   color: #4c3c2a;
@@ -60,11 +61,25 @@ button {
   font-weight: 700;
   box-sizing: border-box;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+.button button{
+  margin: 0 15px;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+  border-radius: 0;
 }
 
 body {
   margin: 0;
 }
+
+textarea {
+    height: 50px;
+    width: 100%;
+}
+
 
 #upper-bar {
     display: flex;
@@ -144,6 +159,13 @@ body {
     font-family: "Meow Script";
     font-size: 34px;
     top: 60%;
+}
+
+#sec-delivery-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 200px;
 }
 
 .sec-div {
@@ -278,8 +300,10 @@ body {
 #footer {
     background-color: #aeccd3;
     color: white;
-    padding: 20px 20px;
+    padding: 20px 200px;
     margin-top: 50px;
+    width: auto;
+    box-sizing: border-box;
 }
 
 .footer-title {
@@ -469,4 +493,73 @@ body {
 
 .order-description {
     border-bottom: solid 1px #dbdbdb;
+}
+
+/* order section - mobile view */
+
+#confirm-button {
+    background-color: #2db404;
+    color: #4c3c2a;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Kanchenjunga, sans-serif;
+    margin-top: 10px;
+}
+
+#ordering-select {
+    width: 220px;
+    height: 50px;
+    font-family: 'Kanchenjunga', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #4c3c2a;
+    font-size: 16px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+#order-total {
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 10px;
+}
+
+#ordering-method {
+    margin-top: 10px;
+}
+
+#back-button {
+    background-color: #d80000;
+    color: #4c3a2a;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Kanchenjunga, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#sec-order-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.big {
+    font-size: 40px;
+    color: #4c3c2a;
+    padding-bottom: 20px;
+}
+
+.bigger {
+    font-size: 150px;
+    color: #4c3c2a;
+}
+
+#sec-info {
+    margin: 10px 200px
 }
