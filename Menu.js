@@ -384,6 +384,17 @@ function addToCart (clickedDish, itemPrice, selected, quantity, instructions, di
 
 };
 
+function order () {
+    const orderButton = document.getElementById('ordering-button');
+    orderButton.addEventListener('click', () => {
+        const secOrder = document.getElementById("sec-order");
+        const secDeliveryInfo = document.getElementById("sec-delivery-info");
+        secOrder.style.display = 'none';
+        secDeliveryInfo.style.display = 'flex';
+    }
+    const cancelButton = document.getElementById('cancel-button');
+}
+
 //una ventana para elegir si es a domicilio o reserva
 
 //después del nombre del plato en la comanda, si instrucciones: las instrucciones; si no instrucciones: descripción del plato.
