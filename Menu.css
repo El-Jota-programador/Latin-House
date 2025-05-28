@@ -354,6 +354,12 @@ textarea {
 
 /* menu-section */
 
+#menu-ini-text {
+    padding-top: 15px;
+    color: #4c3c2a;
+    font-size: 25px;
+}
+
 #div-menu-image img {
     width: 100%;
     height: auto;
