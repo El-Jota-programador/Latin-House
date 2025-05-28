@@ -466,10 +466,15 @@ textarea {
     z-index: 2000;
     background-color: #363636;
     padding: 10px 20px;
+    border: 2px solid #575656;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: opacity 0.3s ease-in-out;
 }
 
 .message {
     color: white;
+    font-family: 'Arial', sans-serif;
 }
 
 .x-button-div {
