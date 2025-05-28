@@ -453,9 +453,22 @@ textarea {
     cursor: pointer;
 }
 
+.message-container {
+    position: fixed;
+    left: 50;
+    bottom: 0;
+    z-index: 2000;
+    background-color: #363636;
+    padding: 10px 20px;
+}
+
+.message {
+    color: white;
+}
+
 .x-button-div {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .x-button {

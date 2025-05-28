@@ -100,6 +100,8 @@ function toggleDishMenu () {
             dishMenu.className = 'dish-menu';
 
             let dishName = document.createElement('p');
+            dishName.className = 'input-text';
+            dishName.textContent = dish.id;
             let xButtonDiv = document.createElement('div');
             xButtonDiv.className = "x-button-div";
             let xButton = document.createElement('button');
@@ -133,6 +135,7 @@ function toggleDishMenu () {
             let quantity;
 
             const menuWithSelect = () => {
+                xButtonDiv.appendChild(dishName);
                 xButtonDiv.appendChild(xButton);
                 dishMenu.appendChild(xButtonDiv);
                 dishMenu.appendChild(selectText);
@@ -145,6 +148,7 @@ function toggleDishMenu () {
             }
 
             const menuNoSelect = () => {
+                xButtonDiv.appendChild(dishName);
                 xButtonDiv.appendChild(xButton);
                 dishMenu.appendChild(xButtonDiv);
                 dishMenu.appendChild(amountText);
@@ -157,7 +161,7 @@ function toggleDishMenu () {
             if (dish == tacos) {
                 selectText.innerHTML = "Choose the tacos' filling";
                 selectText.className = "input-text";
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 // Options for the select
                 const options = ["Beef and onion", "Vegetables"];
@@ -173,7 +177,7 @@ function toggleDishMenu () {
             } else if (dish == pozole) {
                 selectText.innerHTML = "Choose the type of meat";
                 selectText.className = "input-text";
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 // Options for the select
                 const options = ["Pork", "Chicken"];
@@ -189,7 +193,7 @@ function toggleDishMenu () {
             } else if (dish == pupusas) {
                 selectText.innerHTML = "Choose the pupusas' filling";
                 selectText.className = "input-text";
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 // Options for the select
                 const options = ["Chicharron (pork)", "Beans", "Chicharron and beans", "'Locas' (chicharron, beans and cheese)", "Asaparagus"];
@@ -204,7 +208,7 @@ function toggleDishMenu () {
             } else if (dish == tamalesDeElote) {
                 selectText.innerHTML = "Choose the tamales' filling";
                 selectText.className = "input-text";
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 // Options for the select
                 const options = ["Chicken and potato", "Beans"];
@@ -220,7 +224,7 @@ function toggleDishMenu () {
             } else if (dish == tostadasSalvadoreñas) {
                 selectText.innerHTML = "Choose the toasts' filling";
                 selectText.className = "input-text";
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 // Options for the select
                 const options = ["Chicken and potato", "Beans"];
@@ -236,7 +240,7 @@ function toggleDishMenu () {
             } else if (dish == carimañola) {
                 selectText.innerHTML = "Choose the carimañolas' filling";
                 selectText.className = "input-text";
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 // Options for the select
                 const options = ["Beef", "Cheese", "Chicken"];
@@ -252,7 +256,7 @@ function toggleDishMenu () {
             } else if (dish == alfajores) {
                 selectText.innerHTML = "Choose the alfajores' filling";
                 selectText.className = "input-text";
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 // Options for the select
                 const options = ["Dulce de leche", "Chocolate", "Jam"];
@@ -268,7 +272,7 @@ function toggleDishMenu () {
             } else if (dish == crescent) {
                 selectText.innerHTML = "Choose the alfajores' filling";
                 selectText.className = "input-text";
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 // Options for the select
                 const options = ["Dulce de leche", "Chocolate", "Jam"];
@@ -281,7 +285,7 @@ function toggleDishMenu () {
 
                 menuWithSelect();
             } else {
-                dishName.innerHTML = clickedDish;
+                dishName.innerHTML = dish.id;
 
                 menuNoSelect();
             };
@@ -360,8 +364,22 @@ function addToCart (clickedDish, itemPriceNumber, itemPrice, selected, quantity,
 
     dishMenu.remove();
 
+    showMessage(clickedDish, quantity);
     calculateTotalPrice();
 };
+
+async function showMessage(clickedDish, quantity) {
+    const messageContainer = document.createElement('div');
+    messageContainer.className = 'message-container';
+    const message = document.createElement('p');
+    message.className = 'message';
+    message.innerHTML = `Added ${quantity} ${clickedDish} to your order.`;
+
+    messageContainer.appendChild(message);
+    document.body.appendChild(messageContainer);
+    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
+    messageContainer.remove(); // Remove the message after 2 seconds
+}
 
 function calculateTotalPrice() {
     const orderItems = document.querySelectorAll('.order-item');
@@ -405,7 +423,8 @@ function order () {
 
 function confirmation () {
     const secHome = document.getElementById("sec-home");
-    const secOrder = document.getElementById("sec-order");
+    const secHomeButton = document.getElementById("home-button");
+    const secOrderButton = document.getElementById("order-button");
     const secDeliveryInfo = document.getElementById("sec-delivery-info");
     const secOrderSuccess = document.getElementById("sec-order-success");
     const confButton = document.getElementById('confirm-button');
@@ -429,12 +448,16 @@ function confirmation () {
 
     backButton.addEventListener('click', () => {
         secDeliveryInfo.style.display = 'flex';
-        secOrder.style.display = 'none';
+        secOrderSuccess.style.display = 'none';
     });
 
     backHomeButton.addEventListener('click', () => {
         secOrderSuccess.style.display = 'none';
-        secHome.style.display = 'flex';
+        secOrderButton.style.borderBottom = 'transparent';
+        secOrderButton.style.filter = 'brightness(0.8)';
+        secHome.style.display = 'block';
+        secHomeButton.style.borderBottom = '2px solid #4c3c2a';
+        secHomeButton.style.filter = 'brightness(1.2)';
         upperBar.style.display = 'flex'; // Show the upper bar again
         deliveryName.value = '';
         deliveryAddress.value = '';
